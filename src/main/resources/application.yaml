@@ -11,3 +11,25 @@ rabbit-mq:
     queue: queue1
     exchange: testExchange
     routing-key: testRoutingKey
+spring:
+    mail:
+      host: smtp.yandex.ru
+      port: 587
+      username: vasilkov.a.s@yandex.ru
+      password: ArigatoDerftion011
+      properties.mail.smtp.auth: true
+      properties.mail.smtp.starttls.enable: true
+      properties.mail.smtp.starttls.required: true
+    datasource:
+      url: jdbc:postgresql://localhost:5444/postgres
+      username: postgres
+      password: postgres
+      #url=jdbc:postgresql://pg:5432/studs
+      #username=s284699
+      #password=6hCX6nqHl02zEJAZ
+      driverClassName: org.postgresql.Driver
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      generate-ddl: true
+      hibernate.ddl-auto: none
+      open-in-view: false

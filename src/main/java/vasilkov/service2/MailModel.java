@@ -1,19 +1,16 @@
 package vasilkov.service2;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
+@Data @RequiredArgsConstructor @AllArgsConstructor
 public class MailModel implements Serializable {
 
     private String to;
     private String subject;
     private String text;
 
-    public MailModel(String to, String subject, String text) {
-        this.to = to;
-        this.subject = subject;
-        this.text = text;
-    }
 }
