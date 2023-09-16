@@ -1,0 +1,13 @@
+server:
+    port: 4041
+jms:
+    queue: queue1
+rabbit-mq:
+    host: localhost
+    port: 5672
+    user: guest
+    password: guest
+    virtual-host: /
+    queue: queue1
+    exchange: testExchange
+    routing-key: testRoutingKey
