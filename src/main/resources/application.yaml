@@ -20,16 +20,29 @@ spring:
       properties.mail.smtp.auth: true
       properties.mail.smtp.starttls.enable: true
       properties.mail.smtp.starttls.required: true
+#    datasource:
+##      url: jdbc:postgresql://localhost:5444/postgres
+##      username: postgres
+##      password: postgres
+##      #url=jdbc:postgresql://pg:5432/studs
+##      #username=s284699
+##      #password=6hCX6nqHl02zEJAZ
+##      driverClassName: org.postgresql.Driver
+##    jpa:
+##      database-platform: org.hibernate.dialect.PostgreSQLDialect
+##      generate-ddl: true
+##      hibernate.ddl-auto: none
+##      open-in-view: false
+
     datasource:
-      url: jdbc:postgresql://localhost:5444/postgres
-      username: postgres
-      password: postgres
-      #url=jdbc:postgresql://pg:5432/studs
-      #username=s284699
-      #password=6hCX6nqHl02zEJAZ
-      driverClassName: org.postgresql.Driver
+      url: jdbc:h2:mem:camunda2
+      username: sa
+      password: password
+      driverClassName: org.h2.Driver
     jpa:
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-      generate-ddl: true
-      hibernate.ddl-auto: none
-      open-in-view: false
+      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+camunda:
+  bpm:
+    admin-user:
+      id: demo
+      password: demo

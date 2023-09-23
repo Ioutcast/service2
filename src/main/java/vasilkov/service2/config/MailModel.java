@@ -1,4 +1,4 @@
-package vasilkov.service2;
+package vasilkov.service2.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

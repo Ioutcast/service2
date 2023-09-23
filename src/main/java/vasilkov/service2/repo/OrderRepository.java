@@ -1,4 +1,4 @@
-package vasilkov.service2;
+package vasilkov.service2.repo;
 
 import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,11 +11,5 @@ import java.util.Optional;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer>, JpaSpecificationExecutor<Order> {
-
     @NonNull Optional<Order> findById(@NonNull Integer integer);
-
-    Optional<List<Order>> findAllByUserEmail(String currentEmail);
-
-    List<Order> findOrderByStatusIsNull();
-
 }
