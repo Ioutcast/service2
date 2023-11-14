@@ -1,4 +1,4 @@
-package vasilkov.service2;
+package vasilkov.service2.configuration;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -9,19 +9,12 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
+import vasilkov.service2.service.JmsReceiver;
 
 @Configuration
 @EnableAutoConfiguration
 public class RabbitMqConfig {
     final static String queueName = "queue1";
-    private final EmailService emailService;
-    private final JavaMailSenderImpl emailSsender;
-
-    public RabbitMqConfig(EmailService emailService, JavaMailSenderImpl emailSsender) {
-        this.emailService = emailService;
-        this.emailSsender = emailSsender;
-    }
 
     @Bean
     public RabbitTemplate rabbitTemplate() {

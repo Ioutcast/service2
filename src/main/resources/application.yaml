@@ -23,10 +23,10 @@ spring:
     datasource:
       url: jdbc:postgresql://localhost:5444/postgres
       username: postgres
-      password: postgres
-      #url=jdbc:postgresql://pg:5432/studs
-      #username=s284699
-      #password=6hCX6nqHl02zEJAZ
+      password: mysecretpassword
+#      url: jdbc:postgresql://pg:5432/studs
+#      username: s284699
+#      password: 6hCX6nqHl02zEJAZ
       driverClassName: org.postgresql.Driver
     jpa:
       database-platform: org.hibernate.dialect.PostgreSQLDialect

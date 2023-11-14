@@ -1,4 +1,4 @@
-package vasilkov.service2;
+package vasilkov.service2.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,9 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import vasilkov.service2.domain.model.MailModel;
 
 
 @Service
@@ -43,7 +42,7 @@ public class JmsReceiver {
     public void receiveMessage(String message) {
         try {
            MailModel mail = mapper.readValue(message, MailModel.class);
-           System.out.println(mail);
+            log.info("received message", message);
            sendSimpleMessage(mail.getTo(),mail.getSubject(),mail.getText());
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
